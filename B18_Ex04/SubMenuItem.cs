@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+
     public class SubMenuItem : MenuItem
     {
         private const int k_BackOrExitIdx = 0;

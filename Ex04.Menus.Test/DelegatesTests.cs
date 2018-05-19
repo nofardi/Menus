@@ -1,10 +1,12 @@
 ﻿using System;
+using Ex04.Menus.Delegates;
+
 namespace Ex04.Menus.Test
 {
-    using Ex04.Menus.Delegates;
     public class DelegatesTests
     {
         private readonly MainMenu r_MainMenu;
+
         public DelegatesTests()
         {
             buildMenu();
@@ -33,11 +35,10 @@ namespace Ex04.Menus.Test
             mainMenu.MenuItems.Add(showDateTimeMenu);
             mainMenu.MenuItems.Add(versionsCapitalMenu);
 
-            //timeAction.ItemClicked += MenuActions.ShowTime;
-            //dateAction.ItemClicked += MenuActions.ShowDate;
-            //capitalAction.ItemClicked += MenuActions.ShowCapital;
-            //versionAction.ItemClicked += MenuActions.ShowVersion;
-
+            // timeAction.ItemClicked += MenuActions.ShowTime;
+            // dateAction.ItemClicked += MenuActions.ShowDate;
+            // capitalAction.ItemClicked += MenuActions.ShowCapital;
+            // versionAction.ItemClicked += MenuActions.ShowVersion;
         }
 
         private void showTime(MenuItem obj)

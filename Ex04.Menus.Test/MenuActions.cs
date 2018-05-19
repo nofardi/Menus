@@ -1,9 +1,9 @@
 ﻿using System;
+
 namespace Ex04.Menus.Test
 {
     public class MenuActions
     {
-
         private const string k_VersionStr = "Version: 18.2.4.0";
 
         public static void ShowTime()
@@ -44,6 +44,7 @@ namespace Ex04.Menus.Test
                     cnt++;
                 }
             }
+
             return cnt;     
         }
     }
