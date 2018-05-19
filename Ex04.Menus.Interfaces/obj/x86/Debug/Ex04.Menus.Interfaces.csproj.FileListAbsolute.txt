@@ -1,0 +1,2 @@
+C:\Users\Erez\Source\Repos\Menus\Ex04.Menus.Interfaces\obj\x86\Debug\Ex04.Menus.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Erez\Source\Repos\Menus\Ex04.Menus.Interfaces\obj\x86\Debug\Ex04.Menus.Interfaces.csproj.CoreCompileInputs.cache

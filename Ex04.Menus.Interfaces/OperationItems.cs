@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class OperationItems : MenuItem
+    public class OpretionItems : MenuItem
     {
-        protected OperationItems(string i_MenuItemName, SubMenuItem i_ParentItem) : base(i_MenuItemName, i_ParentItem)
+        protected OpretionItems(string i_MenuItemName, SubMenuItem i_ParentItem) : base(i_MenuItemName, i_ParentItem)
         {
         }
 
