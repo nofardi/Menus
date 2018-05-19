@@ -17,13 +17,15 @@ namespace Ex04.Menus.Interfaces
             m_Items = i_Items;
         }
 
+        public List<MenuItem> Items => m_Items;
+
         public override void TriggerMenuItem()
         {    
             Console.Clear();
             Console.WriteLine("*********{Name}******");
             printSubMenu();
             int selectedTabIndex = getPickedMenuItemFromUser(m_Items);
-            activateMenuTab(selectedTabIndex);
+            runUserCoice(selectedTabIndex);
         }
 
         private void printSubMenu()
@@ -49,12 +51,42 @@ namespace Ex04.Menus.Interfaces
 
         private int getPickedMenuItemFromUser(List<MenuItem> items)
         {
-            throw new NotImplementedException();
+            bool isVaild = false;
+            int menuItemSelectByUser = 0;
+            Console.WriteLine("Please select one of the option from the menu");
+
+            while (!isVaild)
+            {
+                if (int.TryParse(Console.ReadLine(), out menuItemSelectByUser) && menuItemSelectByUser <= Items.Capacity)
+                {
+                    isVaild = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invaild Choice - Please try again");
+                }
+            }
+
+            return menuItemSelectByUser;
         }
 
-        private void activateMenuTab(int selectedTabIndex)
+        private void runUserCoice(int i_selectedTabIndex)
         {
-            throw new NotImplementedException();
+            if (i_selectedTabIndex == m_ExitOrBack)
+            {
+                if (this is MainMenu)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    ParentItem.TriggerMenuItem();
+                }
+            }
+            else
+            {
+                Items[i_selectedTabIndex - 1].TriggerMenuItem();
+            }
         }
     }
 }
