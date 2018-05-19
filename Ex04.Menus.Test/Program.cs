@@ -1,11 +1,12 @@
-﻿using System;
-namespace Ex04.Menus.Test
+﻿namespace Ex04.Menus.Test
 {
     public class Program
     {
-        public void Main()
+        public static void Main()
         {
-            //buid 2 menus
+            DelegatesTests delegatesTests = new DelegatesTests();
+
+            delegatesTests.RunTests();
         }
     }
 }
