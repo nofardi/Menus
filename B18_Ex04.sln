@@ -1,7 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B18_Ex04", "B18_Ex04\B18_Ex04.csproj", "{15755BC7-DCCA-4D3E-95CF-21A814262853}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex04.Menus.Delegates", "B18_Ex04\Ex04.Menus.Delegates.csproj", "{15755BC7-DCCA-4D3E-95CF-21A814262853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex04.Menus.Interfaces", "Ex04.Menus.Interfaces\Ex04.Menus.Interfaces.csproj", "{23F297CD-A80E-4603-9425-757D8B4829C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex04.Menus.Test", "Ex04.Menus.Test\Ex04.Menus.Test.csproj", "{C7602031-E2AE-456E-BD94-3671E223409F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +17,13 @@ Global
 		{15755BC7-DCCA-4D3E-95CF-21A814262853}.Debug|x86.Build.0 = Debug|x86
 		{15755BC7-DCCA-4D3E-95CF-21A814262853}.Release|x86.ActiveCfg = Release|x86
 		{15755BC7-DCCA-4D3E-95CF-21A814262853}.Release|x86.Build.0 = Release|x86
+		{23F297CD-A80E-4603-9425-757D8B4829C9}.Debug|x86.ActiveCfg = Debug|x86
+		{23F297CD-A80E-4603-9425-757D8B4829C9}.Debug|x86.Build.0 = Debug|x86
+		{23F297CD-A80E-4603-9425-757D8B4829C9}.Release|x86.ActiveCfg = Release|x86
+		{23F297CD-A80E-4603-9425-757D8B4829C9}.Release|x86.Build.0 = Release|x86
+		{C7602031-E2AE-456E-BD94-3671E223409F}.Debug|x86.ActiveCfg = Debug|x86
+		{C7602031-E2AE-456E-BD94-3671E223409F}.Debug|x86.Build.0 = Debug|x86
+		{C7602031-E2AE-456E-BD94-3671E223409F}.Release|x86.ActiveCfg = Release|x86
+		{C7602031-E2AE-456E-BD94-3671E223409F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal

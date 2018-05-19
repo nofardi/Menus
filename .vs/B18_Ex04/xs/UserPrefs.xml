@@ -1,10 +1,16 @@
-﻿<Properties StartupConfiguration="{15755BC7-DCCA-4D3E-95CF-21A814262853}|Default">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{C7602031-E2AE-456E-BD94-3671E223409F}|Default">
+  <MonoDevelop.Ide.ItemProperties.Ex04.Menus.Delegates PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Ex04.Menus.Test/Program.cs">
+    <Files>
+      <File FileName="Ex04.Menus.Test/Program.cs" Line="6" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.B18__Ex04 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Ex04.Menus.Interfaces FirstBuild="True" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ex04.Menus.Test PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
 </Properties>
