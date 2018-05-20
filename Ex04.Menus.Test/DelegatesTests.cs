@@ -41,9 +41,5 @@ namespace Ex04.Menus.Test
             // versionAction.ItemClicked += MenuActions.ShowVersion;
         }
 
-        private void showTime(MenuItem obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

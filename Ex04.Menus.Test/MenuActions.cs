@@ -8,14 +8,12 @@ namespace Ex04.Menus.Test
 
         public static void ShowTime()
         {
-            DateTime now = DateTime.Now;
-            Console.WriteLine(now.ToString());
+            Console.WriteLine($"The time now is: {DateTime.Now:t}");
         }
 
         public static void ShowDate()
         {
-            DateTime today = DateTime.Today;
-            Console.WriteLine(today.ToString());
+            Console.WriteLine($"The date today is: {DateTime.Now:d}");;
         }
 
         public static void ShowCapital()
