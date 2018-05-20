@@ -13,7 +13,7 @@ namespace Ex04.Menus.Test
 
         public static void ShowDate()
         {
-            Console.WriteLine($"The date today is: {DateTime.Now:d}");;
+            Console.WriteLine($"The date today is: {DateTime.Now:d}");
         }
 
         public static void ShowCapital()

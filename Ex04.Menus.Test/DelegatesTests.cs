@@ -40,6 +40,5 @@ namespace Ex04.Menus.Test
             capitalAction.ItemClicked += MenuActions.ShowCapital;
             versionAction.ItemClicked += MenuActions.ShowVersion;
         }
-
     }
 }
