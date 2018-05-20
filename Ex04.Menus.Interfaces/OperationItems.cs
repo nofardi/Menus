@@ -7,7 +7,7 @@ namespace Ex04.Menus.Interfaces
     {
         private readonly IActionForLeafItem m_IActionForLeafItem;
 
-        protected OperationItems(string i_MenuItemName, SubMenuItem i_ParentItem, IActionForLeafItem i_AIActionForLeafItem) : base(i_MenuItemName, i_ParentItem)
+        public OperationItems(string i_MenuItemName, SubMenuItem i_ParentItem, IActionForLeafItem i_AIActionForLeafItem) : base(i_MenuItemName, i_ParentItem)
         {
             m_IActionForLeafItem = i_AIActionForLeafItem;
         }

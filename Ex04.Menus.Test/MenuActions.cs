@@ -1,4 +1,5 @@
 ﻿using System;
+using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
@@ -6,30 +7,36 @@ namespace Ex04.Menus.Test
     {
         private const string k_VersionStr = "Version: 18.2.4.0";
 
-        public static void ShowTime()
+        internal class ShowTimeClass : IActionForLeafItem
         {
-            Console.WriteLine($"The time now is: {DateTime.Now:t}");
+            public void ActionMethod()
+            {
+                ShowTime();
+            }          
         }
 
-        public static void ShowDate()
+        internal class ShowDateClass : IActionForLeafItem
         {
-            Console.WriteLine($"The date today is: {DateTime.Now:d}");
+            public void ActionMethod()
+            {
+                ShowDate();
+            }
         }
 
-        public static void ShowCapital()
+        internal class ShowCapitalClass : IActionForLeafItem
         {
-            string strInput;
-            int capitalCnt;
-            Console.WriteLine("Please write a sentence:");
-            strInput = Console.ReadLine();
-            capitalCnt = countUpperCase(strInput);
-
-            Console.WriteLine($"Number of upper case letters: {capitalCnt}");
+            public void ActionMethod()
+            {
+                ShowCapital();
+            }           
         }
 
-        public static void ShowVersion()
+        internal class ShowVersionClass : IActionForLeafItem
         {
-            Console.WriteLine(k_VersionStr);
+            public void ActionMethod()
+            {
+                ShowVersion();
+            }           
         }
 
         private static int countUpperCase(string i_InputStr)
@@ -44,6 +51,31 @@ namespace Ex04.Menus.Test
             }
 
             return cnt;     
+        }
+
+        internal static void ShowTime()
+        {
+            Console.WriteLine($"The time now is: {DateTime.Now:t}");
+        }
+
+        internal static void ShowDate()
+        {
+            Console.WriteLine($"The date today is: {DateTime.Now:d}");
+        }
+
+        internal static void ShowCapital()
+        {
+            string strInput;
+            int capitalCnt;
+            Console.WriteLine("Please write a sentence:");
+            strInput = Console.ReadLine();
+            capitalCnt = countUpperCase(strInput);
+            Console.WriteLine($"Number of upper case letters: {capitalCnt}");
+        }
+
+        internal static void ShowVersion()
+        {
+            Console.WriteLine(k_VersionStr);
         }
     }
 }
