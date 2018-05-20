@@ -22,7 +22,7 @@ namespace Ex04.Menus.Interfaces
         public override void TriggerMenuItem()
         {    
             Console.Clear();
-            Console.WriteLine($"**** {Name} *****"); ;
+            Console.WriteLine($"**** {Name} *****");
             printSubMenu();
             int selectedTabIndex = getPickedMenuItemFromUser(m_Items);
             runUserCoice(selectedTabIndex);
