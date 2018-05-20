@@ -22,7 +22,7 @@ namespace Ex04.Menus.Interfaces
         public override void TriggerMenuItem()
         {    
             Console.Clear();
-            Console.WriteLine("*********{Name}******");
+            Console.WriteLine($"**** {Name} *****"); ;
             printSubMenu();
             int selectedTabIndex = getPickedMenuItemFromUser(m_Items);
             runUserCoice(selectedTabIndex);
@@ -57,7 +57,7 @@ namespace Ex04.Menus.Interfaces
 
             while (!isVaild)
             {
-                if (int.TryParse(Console.ReadLine(), out menuItemSelectByUser) && menuItemSelectByUser <= Items.Capacity)
+                if (int.TryParse(Console.ReadLine(), out menuItemSelectByUser) && menuItemSelectByUser <= Items.Count)
                 {
                     isVaild = true;
                 }
