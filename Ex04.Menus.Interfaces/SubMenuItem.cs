@@ -1,63 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
     public class SubMenuItem : MenuItem
     {
-        private const int m_ExitOrBack = 0;
-        private readonly List<MenuItem> m_Items;     
+        private const int k_ExitOrBack = 0;
+        private const int k_ExitCode = 0;
+        private readonly List<MenuItem> r_MenuItems;     
 
-        public SubMenuItem(string i_MenuItemName, SubMenuItem i_ParentItem, List<MenuItem> i_Items)
-            : base(i_MenuItemName, i_ParentItem)
+        public SubMenuItem(string i_MenuItemStr, SubMenuItem i_ParentItem, List<MenuItem> i_MenuItems)
+            : base(i_MenuItemStr, i_ParentItem)
         {
-            m_Items = i_Items;
+            r_MenuItems = i_MenuItems;
         }
 
-        public List<MenuItem> Items => m_Items;
+        public List<MenuItem> MenuItems => r_MenuItems;
 
         public override void TriggerMenuItem()
         {    
-            Console.Clear();
-            Console.WriteLine($"**** {Name} *****");
+            Console.WriteLine($"**** {ItemStr} *****");
             printSubMenu();
-            int selectedTabIndex = getPickedMenuItemFromUser(m_Items);
-            runUserCoice(selectedTabIndex);
+            byte selectedItemIdx = getSelectedMenuItemIndex();
+            activateMenuItem(selectedItemIdx);
+            Console.Clear();
         }
 
         private void printSubMenu()
         {
-            string BackOrExit;
-            if (this is MainMenu)
-            {
-                BackOrExit = "Exit";
-            }
-            else
-            {
-                BackOrExit = "Back";
-            }
+            string backOrExitString = this is MainMenu ? "Exit" : "Back";
+            byte menuItemIndex = 0;
 
-            int menuItemIndex = 0;
-
-            Console.WriteLine("{0} . {1}", menuItemIndex++, BackOrExit);
-            foreach (MenuItem menuItem in m_Items)
+            Console.WriteLine($"{menuItemIndex++}. {backOrExitString}");
+            foreach (MenuItem menuItem in r_MenuItems)
             {
-                Console.WriteLine("{0} . {1}", menuItemIndex++, menuItem.Name);
+                Console.WriteLine($"{menuItemIndex++}. {menuItem.ItemStr}");
             }
         }
 
-        private int getPickedMenuItemFromUser(List<MenuItem> items)
+        private byte getSelectedMenuItemIndex()
         {
             bool isVaild = false;
-            int menuItemSelectByUser = 0;
+            byte menuItemSelectByUser = 0;
             Console.WriteLine("Please select one of the option from the menu");
 
             while (!isVaild)
             {
-                if (int.TryParse(Console.ReadLine(), out menuItemSelectByUser) && menuItemSelectByUser <= Items.Count)
+                if (byte.TryParse(Console.ReadLine(), out menuItemSelectByUser) && menuItemSelectByUser <= r_MenuItems.Count)
                 {
                     isVaild = true;
                 }
@@ -70,22 +59,24 @@ namespace Ex04.Menus.Interfaces
             return menuItemSelectByUser;
         }
 
-        private void runUserCoice(int i_selectedTabIndex)
+        private void activateMenuItem(byte i_SelectedItemIdx)
         {
-            if (i_selectedTabIndex == m_ExitOrBack)
+            if (i_SelectedItemIdx == k_ExitOrBack)
             {
                 if (this is MainMenu)
                 {
-                    Environment.Exit(0);
+                    Environment.Exit(k_ExitCode);
                 }
                 else
                 {
+                    Console.Clear();
                     ParentItem.TriggerMenuItem();
                 }
             }
             else
             {
-                Items[i_selectedTabIndex - 1].TriggerMenuItem();
+                Console.Clear();
+                r_MenuItems[i_SelectedItemIdx - 1].TriggerMenuItem();
             }
         }
     }

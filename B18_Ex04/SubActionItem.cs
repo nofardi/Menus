@@ -6,8 +6,6 @@
     {
         public event Action ItemClicked;
 
-        private const int k_SleepAmount = 2000;
-
         public SubActionItem(string i_MenuItemStr, SubMenuItem i_ParentMenuItem)
             : base(i_MenuItemStr, i_ParentMenuItem)
         {
@@ -17,7 +15,6 @@
         {
             Console.Clear();
             OnClicked();
-            System.Threading.Thread.Sleep(k_SleepAmount);
             ParentItem.TriggerMenuItem();
         }
 

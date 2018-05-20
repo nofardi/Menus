@@ -2,18 +2,18 @@
 {
     public abstract class MenuItem
     {
-        private readonly string m_Name;
-        private readonly SubMenuItem m_ItemMenuParent;
+        private readonly string r_ItemStr;
+        private readonly SubMenuItem r_ParentMenuItem;
 
         protected MenuItem(string i_MenuItemName, SubMenuItem i_ParentItem)
         {
-            m_Name = i_MenuItemName;
-            m_ItemMenuParent = i_ParentItem;
+            r_ItemStr = i_MenuItemName;
+            r_ParentMenuItem = i_ParentItem;
         }
 
-        public string Name => m_Name;
+        public string ItemStr => r_ItemStr;
 
-        public SubMenuItem ParentItem => m_ItemMenuParent;
+        public SubMenuItem ParentItem => r_ParentMenuItem;
 
         public abstract void TriggerMenuItem();
     }

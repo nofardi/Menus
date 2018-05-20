@@ -18,19 +18,19 @@
 
         public override void TriggerMenuItem()
         {
-            Console.Clear();
-            Console.WriteLine($"...{ItemStr}...");
+            Console.WriteLine($"**** {ItemStr} *****");
             printSubMenu();
             byte selectedItemIdx = getSelectedMenuItemIndex();
             activateMenuItem(selectedItemIdx);
+            Console.Clear();
         }
 
         private void printSubMenu()
         {
-            string backString = this is MainMenu ? "Exit" : "Back";
+            string backOrExitString = this is MainMenu ? "Exit" : "Back";
             byte menuItemIndex = 0;
 
-            Console.WriteLine($"{menuItemIndex++}. {backString}");
+            Console.WriteLine($"{menuItemIndex++}. {backOrExitString}");
             foreach (MenuItem menuItem in MenuItems)
             {
                 Console.WriteLine($"{menuItemIndex++}. {menuItem.ItemStr}");
@@ -64,11 +64,13 @@
             {
                 if (this is MainMenu == false)
                 {
+                    Console.Clear();
                     ParentItem.TriggerMenuItem();
                 }
             }
             else
             {
+                Console.Clear();
                 r_MenuItems[i_SelectedTabIndex - 1].TriggerMenuItem();
             }
         }

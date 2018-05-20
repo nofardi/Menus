@@ -1,12 +1,12 @@
-﻿using Ex04.Menus.Delegates;
+﻿using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
-    public class DelegatesTests
+    public class InterfacesTests
     {
         private MainMenu m_MainMenu;
 
-        public DelegatesTests()
+        public InterfacesTests()
         {
             buildMenu();
         }
@@ -19,12 +19,12 @@ namespace Ex04.Menus.Test
         private void buildMenu()
         {
             m_MainMenu = new MainMenu("Main menu", null, new System.Collections.Generic.List<MenuItem>());
-            SubMenuItem showDateTimeMenu = new SubMenuItem("Show Date/ Timer", m_MainMenu, new System.Collections.Generic.List<MenuItem>());
+            SubMenuItem showDateTimeMenu = new SubMenuItem("Show Date/ Time", m_MainMenu, new System.Collections.Generic.List<MenuItem>());
             SubMenuItem versionsCapitalMenu = new SubMenuItem("Version and Capitals", m_MainMenu, new System.Collections.Generic.List<MenuItem>());
-            SubActionItem timeAction = new SubActionItem("Show Time", showDateTimeMenu);
-            SubActionItem dateAction = new SubActionItem("Show Date", showDateTimeMenu);
-            SubActionItem capitalAction = new SubActionItem("Count Capitals", versionsCapitalMenu);
-            SubActionItem versionAction = new SubActionItem("Show Version", versionsCapitalMenu);
+            SubActionItem timeAction = new SubActionItem("Show Time", showDateTimeMenu, new MenuActions.ShowTimeClass());
+            SubActionItem dateAction = new SubActionItem("Show Date", showDateTimeMenu, new MenuActions.ShowDateClass());
+            SubActionItem capitalAction = new SubActionItem("Count Capitals", versionsCapitalMenu, new MenuActions.ShowCapitalClass());
+            SubActionItem versionAction = new SubActionItem("Show Version", versionsCapitalMenu, new MenuActions.ShowVersionClass());
 
             showDateTimeMenu.MenuItems.Add(timeAction);
             showDateTimeMenu.MenuItems.Add(dateAction);
@@ -33,11 +33,6 @@ namespace Ex04.Menus.Test
 
             m_MainMenu.MenuItems.Add(showDateTimeMenu);
             m_MainMenu.MenuItems.Add(versionsCapitalMenu);
-
-            timeAction.ItemClicked += MenuActions.ShowTime;
-            dateAction.ItemClicked += MenuActions.ShowDate;
-            capitalAction.ItemClicked += MenuActions.ShowCapital;
-            versionAction.ItemClicked += MenuActions.ShowVersion;
         }
     }
 }

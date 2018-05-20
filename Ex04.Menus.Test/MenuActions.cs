@@ -7,7 +7,7 @@ namespace Ex04.Menus.Test
     {
         private const string k_VersionStr = "Version: 18.2.4.0";
 
-        internal class ShowTimeClass : IActionForLeafItem
+        internal class ShowTimeClass : IActionForActionItem
         {
             public void ActionMethod()
             {
@@ -15,7 +15,7 @@ namespace Ex04.Menus.Test
             }          
         }
 
-        internal class ShowDateClass : IActionForLeafItem
+        internal class ShowDateClass : IActionForActionItem
         {
             public void ActionMethod()
             {
@@ -23,7 +23,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        internal class ShowCapitalClass : IActionForLeafItem
+        internal class ShowCapitalClass : IActionForActionItem
         {
             public void ActionMethod()
             {
@@ -31,7 +31,7 @@ namespace Ex04.Menus.Test
             }           
         }
 
-        internal class ShowVersionClass : IActionForLeafItem
+        internal class ShowVersionClass : IActionForActionItem
         {
             public void ActionMethod()
             {
