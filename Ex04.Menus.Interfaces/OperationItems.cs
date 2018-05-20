@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Ex04.Menus.Interfaces
 {
     public class OperationItems : MenuItem
     {
-        protected OperationItems(string i_MenuItemName, SubMenuItem i_ParentItem) : base(i_MenuItemName, i_ParentItem)
+        private readonly IActionForLeafItem m_IActionForLeafItem;
+
+        protected OperationItems(string i_MenuItemName, SubMenuItem i_ParentItem, IActionForLeafItem i_AIActionForLeafItem) : base(i_MenuItemName, i_ParentItem)
         {
+            m_IActionForLeafItem = i_AIActionForLeafItem;
         }
 
         public override void TriggerMenuItem()
         {
-            throw new NotImplementedException();
+            Console.Clear();
+            m_IActionForLeafItem.ActionMethod();
+            Thread.Sleep(2000);
+            ParentItem.TriggerMenuItem();
         }
     }
 }
